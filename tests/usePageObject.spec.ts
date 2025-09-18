@@ -10,7 +10,7 @@ test.beforeEach(async({page})=>{
 
     
 })
-test('Navigate to form page @smoke',async({page})=>{
+test.only('Navigate to form page @smoke',async({page})=>{
    const pm= new PageManager(page)
    
    await pm.navigateTo().forLayoutPage()
