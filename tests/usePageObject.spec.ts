@@ -1,8 +1,8 @@
 import {expect, test} from '@playwright/test'
-import{PageManager} from '../.vscode/Page-Object/pageManager'
-import { NavigationPage } from '../.vscode/Page-Object/navigationPage'
-import { FormLayoutPage } from '../.vscode/Page-Object/formLayoutsPage'
-import{DatePickerPage} from '../.vscode/Page-Object/datePickerPage'
+import{PageManager} from '../Page-Objects/pageManager'
+import { NavigationPage } from '../Page-Objects/navigationPage'
+import { FormLayoutPage } from '../Page-Objects/formLayoutsPage'
+import{DatePickerPage} from '../Page-Objects/datePickerPage'
 import {faker} from '@faker-js/faker'
 
 test.beforeEach(async({page})=>{

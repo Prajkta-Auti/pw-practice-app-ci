@@ -1,5 +1,5 @@
 import {test as base} from '@playwright/test'
-import{PageManager} from '../pw-practice-app/.vscode/Page-Object/pageManager'
+import{PageManager} from './Page-Objects/pageManager'
 
 export type TestOptions={
     globalsQaURL:string
