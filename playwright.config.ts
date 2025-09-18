@@ -12,7 +12,19 @@ export default defineConfig<TestOptions>({
  
   retries: process.env.CI ? 2 : 1,
   
-  reporter: [['json',{outputFile:'test-results/jsconReport.json'}],
+  reporter: [
+    process.env.CI ? ["dot"] : ["list"],
+    [
+      "@argos-ci/playwright/reporter",
+      {
+        // Upload to Argos on CI only.
+        uploadToArgos: !!process.env.CI,
+
+       
+      },
+    ],
+
+    ['json',{outputFile:'test-results/jsconReport.json'}],
            // [ "allure-playwright"],
             ['html']
 ],
@@ -25,6 +37,7 @@ export default defineConfig<TestOptions>({
 
     
     trace: 'on-first-retry',
+     screenshot: "only-on-failure",
     actionTimeout:5000,
     navigationTimeout:5000,
     video:{

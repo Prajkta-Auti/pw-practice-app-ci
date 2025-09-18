@@ -1,8 +1,6 @@
 import {expect, test} from '@playwright/test'
 import{PageManager} from '../Page-Objects/pageManager'
-import { NavigationPage } from '../Page-Objects/navigationPage'
-import { FormLayoutPage } from '../Page-Objects/formLayoutsPage'
-import{DatePickerPage} from '../Page-Objects/datePickerPage'
+import { argosScreenshot } from "@argos-ci/playwright";
 import {faker} from '@faker-js/faker'
 
 test.beforeEach(async({page})=>{
@@ -18,6 +16,7 @@ test.only('Navigate to form page @smoke',async({page})=>{
    await pm.navigateTo().smartTablePage()
    await pm.navigateTo().toastrPage()
    await pm.navigateTo().tooltipPage()  
+   await argosScreenshot(page, "formLayoutsPage");
 }) 
 
 test('Parameterized method',async({page})=>{
